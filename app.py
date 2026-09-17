@@ -97,39 +97,27 @@ html, body, [class*="css"] {
     padding-top: 2.2rem;
 }
 
-/* Emblema animado (sustituye al GIF de referencia; ver nota al pie del chat) */
+/* Emblema animado — fantasma travieso original en tono morado (diseño propio, sin usar ningún personaje con derechos de autor) */
 .atlas-emblem-wrap {
     display: flex;
     justify-content: center;
     margin-bottom: 0.6rem;
 }
-.atlas-emblem {
-    position: relative;
-    width: 68px;
-    height: 68px;
+.atlas-ghost {
+    width: 78px;
+    height: 78px;
+    filter: drop-shadow(0 0 12px rgba(138,99,201,0.5));
+    animation: atlas-float 2.4s ease-in-out infinite;
+    transform-origin: center bottom;
 }
-.atlas-emblem-ring {
-    position: absolute;
-    inset: 0;
-    border-radius: 50%;
-    background: conic-gradient(from 0deg, #2e5a3a, #7cbf6d, #3a6b46, #1c3823, #2e5a3a);
-    animation: atlas-spin 7s linear infinite;
-    -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 9px), #000 calc(100% - 8px));
-    mask: radial-gradient(farthest-side, transparent calc(100% - 9px), #000 calc(100% - 8px));
+.atlas-ghost svg {
+    width: 100%;
+    height: 100%;
+    display: block;
 }
-.atlas-emblem-core {
-    position: absolute;
-    inset: 9px;
-    border-radius: 50%;
-    background: #0b140f;
-    border: 1px solid rgba(211,161,90,0.35);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
-}
-@keyframes atlas-spin {
-    to { transform: rotate(360deg); }
+@keyframes atlas-float {
+    0%, 100% { transform: translateY(0) rotate(-3deg); }
+    50% { transform: translateY(-9px) rotate(3deg); }
 }
 
 /* Título principal */
@@ -228,9 +216,21 @@ hr {
 </style>
 
 <div class="atlas-emblem-wrap">
-  <div class="atlas-emblem">
-    <div class="atlas-emblem-ring"></div>
-    <div class="atlas-emblem-core">🌿</div>
+  <div class="atlas-ghost">
+    <svg viewBox="0 0 100 110" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="ghostGrad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#9b6fd6"/>
+          <stop offset="100%" stop-color="#5c3f92"/>
+        </linearGradient>
+      </defs>
+      <path d="M50 6 C24 6 10 26 10 52 L10 96 L21 84 L32 97 L43 84 L50 97 L57 84 L68 97 L79 84 L90 96 L90 52 C90 26 76 6 50 6 Z" fill="url(#ghostGrad)"/>
+      <ellipse cx="34" cy="48" rx="8" ry="10" fill="#f5f3ff"/>
+      <ellipse cx="66" cy="48" rx="8" ry="10" fill="#f5f3ff"/>
+      <circle cx="35" cy="52" r="3.6" fill="#1a1206"/>
+      <circle cx="65" cy="52" r="3.6" fill="#1a1206"/>
+      <path d="M30 66 Q50 82 70 66" stroke="#1a1206" stroke-width="3.2" fill="none" stroke-linecap="round"/>
+    </svg>
   </div>
 </div>
 """, unsafe_allow_html=True)
