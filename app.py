@@ -61,51 +61,179 @@ def procesar_excels_a_lisp(lista_archivos_excel):
     
     return "\n".join(lineas_lisp), total_procesados
 
-# --- CONFIGURACIÓN DE PÁGINA ---
+# --- DISEÑO Y ESTRUCTURA VISUAL DE LA WEB ---
 st.set_page_config(page_title="Generador LISP de Predios", page_icon="🏗️", layout="centered")
 
-# --- ESTILOS CSS DE DISEÑO MODERNO Y PROFESIONAL ---
+# ============================================================
+# TEMA VISUAL — inspirado en la paleta verde oscuro / dorado
+# y el emblema animado de referencia (Motor de Apoyo Predial ATLAS)
+# ============================================================
 st.markdown("""
-    <style>
-    .stApp {
-        background-color: #f8fafc;
-    }
-    .main-card {
-        background: #ffffff;
-        padding: 2.5rem;
-        border-radius: 16px;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-        border: 1px solid #e2e8f0;
-        margin-bottom: 2rem;
-    }
-    .stButton > button {
-        background: linear-gradient(135deg, #0ea5e9 0%, #2563eb 100%) !important;
-        color: white !important;
-        border-radius: 8px !important;
-        font-weight: 600 !important;
-        padding: 0.75rem 1.5rem !important;
-        border: none !important;
-        box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
-        transition: all 0.3s ease;
-        width: 100%;
-    }
-    .stButton > button:hover {
-        opacity: 0.95;
-        transform: translateY(-1px);
-        box-shadow: 0 6px 16px rgba(37, 99, 235, 0.3);
-    }
-    .footer-text {
-        text-align: center;
-        color: #64748b;
-        font-size: 0.9rem;
-        margin-top: 3rem;
-        font-weight: 500;
-    }
-    </style>
-""", unsafe_allow_html=True)
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap');
 
-# Contenedor principal con estilo de tarjeta
-st.markdown('<div class="main-card">', unsafe_allow_html=True)
+:root {
+    --atlas-gold: #d3a15a;
+    --atlas-gold-soft: #c9974a;
+    --atlas-text: #f2f1ea;
+    --atlas-text-dim: #a3ada4;
+    --atlas-card-bg: rgba(255,255,255,0.035);
+    --atlas-card-border: rgba(211,161,90,0.28);
+}
+
+#MainMenu, footer, header {visibility: hidden;}
+
+html, body, [class*="css"] {
+    font-family: 'Inter', sans-serif;
+}
+
+.stApp {
+    background: radial-gradient(circle at 50% 0%, #16261c 0%, #0b140d 45%, #050805 100%);
+    background-attachment: fixed;
+}
+
+.block-container {
+    max-width: 760px;
+    padding-top: 2.2rem;
+}
+
+/* Emblema animado (sustituye al GIF de referencia; ver nota al pie del chat) */
+.atlas-emblem-wrap {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0.6rem;
+}
+.atlas-emblem {
+    position: relative;
+    width: 68px;
+    height: 68px;
+}
+.atlas-emblem-ring {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: conic-gradient(from 0deg, #2e5a3a, #7cbf6d, #3a6b46, #1c3823, #2e5a3a);
+    animation: atlas-spin 7s linear infinite;
+    -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 9px), #000 calc(100% - 8px));
+    mask: radial-gradient(farthest-side, transparent calc(100% - 9px), #000 calc(100% - 8px));
+}
+.atlas-emblem-core {
+    position: absolute;
+    inset: 9px;
+    border-radius: 50%;
+    background: #0b140f;
+    border: 1px solid rgba(211,161,90,0.35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+@keyframes atlas-spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Título principal */
+h1 {
+    font-family: 'Playfair Display', Georgia, serif !important;
+    color: var(--atlas-text) !important;
+    font-weight: 800 !important;
+    text-align: center;
+    letter-spacing: 0.2px;
+}
+
+/* Texto descriptivo bajo el título */
+div[data-testid="stMarkdownContainer"] p {
+    color: var(--atlas-text-dim);
+    text-align: center;
+    font-size: 15.5px;
+}
+div[data-testid="stMarkdownContainer"] strong {
+    color: var(--atlas-gold);
+}
+
+/* Zona de carga de archivos */
+[data-testid="stFileUploaderDropzone"] {
+    background: var(--atlas-card-bg) !important;
+    border: 1.5px dashed var(--atlas-card-border) !important;
+    border-radius: 16px !important;
+}
+[data-testid="stFileUploaderDropzoneInstructions"] * {
+    color: var(--atlas-text-dim) !important;
+}
+[data-testid="stFileUploaderDropzone"] button {
+    background: transparent !important;
+    border: 1px solid var(--atlas-gold) !important;
+    color: var(--atlas-gold) !important;
+    border-radius: 8px !important;
+}
+[data-testid="stFileUploaderFile"] {
+    background: var(--atlas-card-bg) !important;
+    border-radius: 10px !important;
+}
+[data-testid="stFileUploaderFile"] * {
+    color: var(--atlas-text) !important;
+}
+
+/* Botones principales */
+.stButton > button, .stDownloadButton > button {
+    background: linear-gradient(135deg, var(--atlas-gold), #a97a34) !important;
+    color: #1a1206 !important;
+    border: none !important;
+    border-radius: 10px !important;
+    font-weight: 600 !important;
+    font-family: 'Inter', sans-serif !important;
+    padding: 0.55rem 1.1rem !important;
+    transition: filter 0.2s ease, box-shadow 0.2s ease;
+}
+.stButton > button:hover, .stDownloadButton > button:hover {
+    filter: brightness(1.08);
+    box-shadow: 0 0 16px rgba(211,161,90,0.35);
+}
+
+/* Spinner */
+[data-testid="stSpinner"] * {
+    color: var(--atlas-text-dim) !important;
+}
+
+/* Alertas (éxito / error) */
+.stAlert {
+    background: var(--atlas-card-bg) !important;
+    border: 1px solid var(--atlas-card-border) !important;
+    border-radius: 12px !important;
+}
+.stAlert * {
+    color: var(--atlas-text) !important;
+}
+
+/* Divisor */
+hr {
+    border-color: rgba(211,161,90,0.2) !important;
+}
+
+/* Caja del pie de página */
+.atlas-footer-box {
+    border: 1px solid var(--atlas-card-border);
+    background: rgba(211,161,90,0.05);
+    border-radius: 14px;
+    padding: 12px 18px;
+    margin-top: 1.2rem;
+}
+.atlas-footer-box p {
+    color: var(--atlas-text-dim) !important;
+    font-family: 'JetBrains Mono', monospace !important;
+    font-size: 12.5px !important;
+    text-align: center;
+    margin: 0 !important;
+}
+</style>
+
+<div class="atlas-emblem-wrap">
+  <div class="atlas-emblem">
+    <div class="atlas-emblem-ring"></div>
+    <div class="atlas-emblem-core">🌿</div>
+  </div>
+</div>
+""", unsafe_allow_html=True)
 
 st.title("🏗️ Generador LISP para AutoCAD")
 st.markdown("Sube tus archivos Excel. La plataforma extraerá las coordenadas y generará automáticamente un único archivo **.lsp**.")
@@ -126,16 +254,16 @@ if archivos_subidos:
                     label="⬇️ Descargar archivo DIBUJAR_PREDIOS.lsp",
                     data=codigo_lisp,
                     file_name="DIBUJAR_PREDIOS.lsp",
-                    mime="text/plain",
-                    use_container_width=True
+                    mime="text/plain"
                 )
             else:
                 st.error("No se pudo extraer coordenadas válidas de los archivos.")
 
-st.markdown('</div>', unsafe_allow_html=True)
-
 # --- PIE DE PÁGINA ---
+st.markdown("---")
 st.markdown(
-    '<p class="footer-text">© 2026. Sitio web creado por Emerson Gutierrez Vega.</p>', 
+    "<div class='atlas-footer-box'><p style='text-align: center; color: gray; font-size: 14px;'>"
+    "© 2026. Sitio web creado por Emerson Gutierrez Vega."
+    "</p></div>", 
     unsafe_allow_html=True
 )
