@@ -61,8 +61,51 @@ def procesar_excels_a_lisp(lista_archivos_excel):
     
     return "\n".join(lineas_lisp), total_procesados
 
-# --- DISEÑO Y ESTRUCTURA VISUAL DE LA WEB ---
+# --- CONFIGURACIÓN DE PÁGINA ---
 st.set_page_config(page_title="Generador LISP de Predios", page_icon="🏗️", layout="centered")
+
+# --- ESTILOS CSS DE DISEÑO MODERNO Y PROFESIONAL ---
+st.markdown("""
+    <style>
+    .stApp {
+        background-color: #f8fafc;
+    }
+    .main-card {
+        background: #ffffff;
+        padding: 2.5rem;
+        border-radius: 16px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        border: 1px solid #e2e8f0;
+        margin-bottom: 2rem;
+    }
+    .stButton > button {
+        background: linear-gradient(135deg, #0ea5e9 0%, #2563eb 100%) !important;
+        color: white !important;
+        border-radius: 8px !important;
+        font-weight: 600 !important;
+        padding: 0.75rem 1.5rem !important;
+        border: none !important;
+        box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+        transition: all 0.3s ease;
+        width: 100%;
+    }
+    .stButton > button:hover {
+        opacity: 0.95;
+        transform: translateY(-1px);
+        box-shadow: 0 6px 16px rgba(37, 99, 235, 0.3);
+    }
+    .footer-text {
+        text-align: center;
+        color: #64748b;
+        font-size: 0.9rem;
+        margin-top: 3rem;
+        font-weight: 500;
+    }
+    </style>
+""", unsafe_allow_html=True)
+
+# Contenedor principal con estilo de tarjeta
+st.markdown('<div class="main-card">', unsafe_allow_html=True)
 
 st.title("🏗️ Generador LISP para AutoCAD")
 st.markdown("Sube tus archivos Excel. La plataforma extraerá las coordenadas y generará automáticamente un único archivo **.lsp**.")
@@ -83,16 +126,16 @@ if archivos_subidos:
                     label="⬇️ Descargar archivo DIBUJAR_PREDIOS.lsp",
                     data=codigo_lisp,
                     file_name="DIBUJAR_PREDIOS.lsp",
-                    mime="text/plain"
+                    mime="text/plain",
+                    use_container_width=True
                 )
             else:
                 st.error("No se pudo extraer coordenadas válidas de los archivos.")
 
+st.markdown('</div>', unsafe_allow_html=True)
+
 # --- PIE DE PÁGINA ---
-st.markdown("---")
 st.markdown(
-    "<p style='text-align: center; color: gray; font-size: 14px;'>"
-    "© 2026. Sitio web creado por Emerson Gutierrez Vega."
-    "</p>", 
+    '<p class="footer-text">© 2026. Sitio web creado por Emerson Gutierrez Vega.</p>', 
     unsafe_allow_html=True
 )
