@@ -135,8 +135,8 @@ html, body, [class*="css"] {
 }
 
 .atlas-gif {
-    width: 176px;
-    height: 176px;
+    width: 117px;
+    height: 117px;
     object-fit: contain;
     display: block;
 }
@@ -246,18 +246,6 @@ hr {
 """, unsafe_allow_html=True)
 
 # --- EMBLEMA ANIMADO ---
-st.markdown(
-    f"""
-    <div class="atlas-emblem-wrap">
-        <img
-            class="atlas-gif"
-            src="data:image/png;base64,{GIF_BASE64}"
-            alt="Pikachu animado"
-        >
-    </div>
-    """,
-    unsafe_allow_html=True
-)
 
 st.title("🏗️ Generador LISP para AutoCAD")
 st.markdown(
@@ -295,6 +283,20 @@ if archivos_subidos:
 
 # --- PIE DE PÁGINA ---
 st.markdown("---")
+
+# --- GIF EN LA PARTE INFERIOR ---
+st.markdown(
+    f"""
+    <div class="atlas-emblem-wrap">
+        <img
+            class="atlas-gif"
+            src="data:image/png;base64,{GIF_BASE64}"
+            alt="Pikachu animado"
+        >
+    </div>
+    """,
+    unsafe_allow_html=True
+)
 st.markdown(
     "<div class='atlas-footer-box'>"
     "<p>© 2026. Sitio web creado por Emerson Gutierrez Vega.</p>"
