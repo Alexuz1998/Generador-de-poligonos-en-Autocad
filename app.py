@@ -318,7 +318,7 @@ archivos_subidos = st.file_uploader(
 )
 
 if archivos_subidos:
-    if st.button("🚀 Generar Archivo LISP"):
+    if st.button("⚡ Generar Archivo LISP"):
         with st.spinner("Procesando vértices en orden ascendente..."):
             codigo_lisp, cantidad = procesar_excels_a_lisp(archivos_subidos)
 
