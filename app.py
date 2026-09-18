@@ -244,8 +244,8 @@ hr {
 }
 
 .atlas-title-pikachu {
-    width: 88px;
-    height: 80px;
+    width: 66px;
+    height: 60px;
     display: block;
     flex-shrink: 0;
     align-self: center;
