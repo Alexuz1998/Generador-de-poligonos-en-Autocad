@@ -307,7 +307,7 @@ st.markdown(
 )
 
 st.markdown(
-    ""Sube tus archivos Excel con coordenadas y genera un archivo **.lsp** para dibujar todos tus polígonos automáticamente en AutoCAD.""
+    " "Sube tus archivos Excel con coordenadas y genera un archivo **.lsp** para dibujar todos tus polígonos automáticamente en AutoCAD." "
 )
 
 # --- CARGA DE ARCHIVOS ---
