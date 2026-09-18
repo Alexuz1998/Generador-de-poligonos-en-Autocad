@@ -71,33 +71,12 @@ def procesar_excels_a_lisp(lista_archivos_excel):
     return "\n".join(lineas_lisp), total_procesados
 
 
-def cargar_gif_base64(ruta_gif):
-    """Carga el GIF y lo convierte a Base64 para insertarlo en HTML."""
-    ruta = Path(ruta_gif)
-
-    if not ruta.exists():
-        return None
-
-    return base64.b64encode(ruta.read_bytes()).decode("utf-8")
-
-
 # --- CONFIGURACIÓN DE LA PÁGINA ---
 st.set_page_config(
     page_title="Generador LISP de Predios",
     page_icon="🏗️",
     layout="centered"
 )
-
-# ============================================================
-# GIF DEL ENCABEZADO / PIE DE PÁGINA
-# ============================================================
-# Coloca este archivo en la MISMA carpeta que app.py:
-# Pikachu_ATLAS_GIF_SIN_FONDO_FINAL.gif
-#
-# El GIF se mostrará debajo de la línea divisoria y
-# exactamente a la derecha del nombre del creador.
-GIF_PATH = Path(__file__).parent / "Pikachu_ATLAS_GIF_SIN_FONDO_FINAL.gif"
-GIF_BASE64 = cargar_gif_base64(GIF_PATH)
 
 # ============================================================
 # TEMA VISUAL — verde oscuro / dorado
@@ -256,10 +235,9 @@ hr {
     margin: 0 !important;
 }
 
-.atlas-footer-gif {
-    width: 117px;
-    height: auto;
-    object-fit: contain;
+.atlas-pikachu {
+    width: 88px;
+    height: 64px;
     display: block;
     flex-shrink: 0;
 }
@@ -304,30 +282,32 @@ if archivos_subidos:
 # --- PIE DE PÁGINA ---
 st.markdown("---")
 
-if GIF_BASE64:
-    st.markdown(
-        f"""
-        <div class="atlas-footer-box">
-            <div class="atlas-footer-content">
-                <p>© 2026. Sitio web creado por Emerson Gutierrez Vega.</p>
-                <img
-                    class="atlas-footer-gif"
-                    src="data:image/gif;base64,{GIF_BASE64}"
-                    alt="Pikachu animado"
-                >
-            </div>
+# Pikachu incrustado directamente en el HTML.
+# No depende de GIFs, imágenes o archivos externos.
+pikachu_svg = r'''<svg class="atlas-pikachu" viewBox="0 0 180 130" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Pikachu">
+  <g stroke="#111111" stroke-width="5" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M28 78 L8 62 L28 46 L20 28 L48 38 L55 62 Z" fill="#F5C400"/>
+    <path d="M54 40 L43 7 L63 14 L72 42 Z" fill="#F5C400"/>
+    <path d="M114 39 L133 10 L146 29 L125 53 Z" fill="#F5C400"/>
+    <path d="M63 40 Q88 21 119 40 Q142 55 139 82 Q135 109 104 116 Q75 122 53 101 Q40 88 43 67 Q46 50 63 40 Z" fill="#F5C400"/>
+    <path d="M43 7 L63 14 L61 26 L50 22 Z" fill="#222222" stroke="none"/>
+    <path d="M133 10 L146 29 L139 38 L124 28 Z" fill="#222222" stroke="none"/>
+    <ellipse cx="73" cy="67" rx="5" ry="7" fill="#111111"/>
+    <ellipse cx="112" cy="67" rx="5" ry="7" fill="#111111"/>
+    <circle cx="72" cy="65" r="1.8" fill="#FFFFFF" stroke="none"/>
+    <circle cx="111" cy="65" r="1.8" fill="#FFFFFF" stroke="none"/>
+    <circle cx="59" cy="83" r="7" fill="#E53935"/>
+    <circle cx="126" cy="83" r="7" fill="#E53935"/>
+    <path d="M84 86 Q92 92 101 86" fill="none"/>
+  </g>
+</svg>'''
+
+st.markdown(
+    f"""<div class="atlas-footer-box">
+        <div class="atlas-footer-content">
+            <p>© 2026. Sitio web creado por Emerson Gutierrez Vega.</p>
+            {pikachu_svg}
         </div>
-        """,
-        unsafe_allow_html=True
-    )
-else:
-    st.markdown(
-        """
-        <div class="atlas-footer-box">
-            <div class="atlas-footer-content">
-                <p>© 2026. Sitio web creado por Emerson Gutierrez Vega.</p>
-            </div>
-        </div>
-        """,
-        unsafe_allow_html=True
-    )
+    </div>""",
+    unsafe_allow_html=True
+)
