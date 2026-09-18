@@ -217,8 +217,11 @@ hr {
     border: 1px solid var(--atlas-card-border);
     background: rgba(211,161,90,0.05);
     border-radius: 14px;
-    padding: 7px 16px;
+    padding: 5px 14px !important;
     margin-top: 1.2rem;
+    height: auto !important;
+    min-height: 0 !important;
+    box-sizing: border-box;
 }
 
 .atlas-footer-content {
@@ -227,7 +230,10 @@ hr {
     justify-content: center;
     gap: 8px;
     width: 100%;
-    min-height: 72px;
+    height: 80px;
+    min-height: 80px;
+    max-height: 80px;
+    overflow: hidden;
 }
 
 .atlas-footer-box p {
@@ -236,14 +242,19 @@ hr {
     font-size: 12.5px !important;
     text-align: center;
     margin: 0 !important;
+    padding: 0 !important;
+    line-height: 1.2 !important;
+    white-space: nowrap;
 }
 
 .atlas-footer-gif {
-    width: 70px;
-    height: 700px;
+    width: 80px !important;
+    height: 80px !important;
+    max-width: 80px !important;
+    max-height: 80px !important;
     object-fit: contain;
     display: block;
-    flex-shrink: 0;
+    flex: 0 0 80px;
     image-rendering: pixelated;
 }
 
