@@ -300,7 +300,7 @@ st.markdown(
     <path d="M84 86 Q92 92 101 86" fill="none"/>
   </g>
 </svg></div>
-        <h1 class="atlas-title-text">Generador LISP para **AutoCAD**</h1>
+        <h1 class="atlas-title-text">Generador LISP para **.AutoCAD**</h1>
     </div>
     """,
     unsafe_allow_html=True
