@@ -307,7 +307,7 @@ st.markdown(
 )
 
 st.markdown(
-    "Sube tus archivos Excel. La plataforma extraerá las coordenadas "
+    "Sube tus archivos Excel con coordenadas y genera un archivo .lsp para dibujar todos tus polígonos automáticamente en AutoCAD "
     "y generará automáticamente un único archivo **.lsp**."
 )
 
