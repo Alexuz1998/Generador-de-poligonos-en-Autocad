@@ -237,17 +237,18 @@ hr {
 
 .atlas-title {
     display: flex;
-    align-items: center;
+    align-items: baseline;
     justify-content: center;
-    gap: 12px;
+    gap: 7px;
     width: 100%;
 }
 
 .atlas-title-pikachu {
-    width: 62px;
-    height: 52px;
+    width: 44px;
+    height: 40px;
     display: block;
     flex-shrink: 0;
+    align-self: center;
 }
 
 .atlas-title-text {
