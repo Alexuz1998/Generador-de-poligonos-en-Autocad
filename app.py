@@ -346,7 +346,7 @@ st.markdown(
     f"""
     <div class="atlas-footer-box">
         <div class="atlas-footer-content">
-            <p>© 2026. Sitio web creado por Emerson Gutierrez Vega.</p>
+            <p>© 2026. Sitio web creado por Alexuz.</p>
             <img
                 class="atlas-footer-gif"
                 src="data:image/gif;base64,{FOOTER_PIKACHU_GIF_BASE64}"
