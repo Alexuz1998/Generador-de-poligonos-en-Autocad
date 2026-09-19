@@ -268,8 +268,8 @@ hr {
 }
 
 .atlas-title-pikachu {
-    width: 90px;
-    height: 90px;
+    width: 100px;
+    height: 100px;
     display: block;
     flex: 0 0 60px;
     object-fit: contain;
