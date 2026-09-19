@@ -153,10 +153,19 @@ div[data-testid="stMarkdownContainer"] strong {
 }
 
 [data-testid="stFileUploaderDropzone"] button {
-    background: transparent !important;
-    border: 1px solid var(--atlas-gold) !important;
-    color: var(--atlas-gold) !important;
+    background: linear-gradient(180deg, #173522 0%, #10251a 100%) !important;
+    border: 1.5px solid #48d97b !important;
+    color: #7ff0a4 !important;
     border-radius: 8px !important;
+    box-shadow: 0 0 5px rgba(72, 217, 123, 0.28) !important;
+    font-weight: 600 !important;
+}
+
+[data-testid="stFileUploaderDropzone"] button:hover {
+    background: linear-gradient(180deg, #1b412a 0%, #132a1d 100%) !important;
+    border-color: #61e992 !important;
+    color: #a2f6bd !important;
+    box-shadow: 0 0 7px rgba(72, 217, 123, 0.38) !important;
 }
 
 [data-testid="stFileUploaderFile"] {
