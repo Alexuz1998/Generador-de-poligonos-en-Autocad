@@ -274,7 +274,7 @@ hr {
     flex: 0 0 60px;
     object-fit: contain;
     align-self: center;
-    margin-left: -10px;
+    margin-left: -50px;
     margin-right: -3px;
 }
 
