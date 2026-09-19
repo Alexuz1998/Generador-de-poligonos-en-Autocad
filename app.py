@@ -78,7 +78,7 @@ def procesar_excels_a_lisp(lista_archivos_excel):
 # --- CONFIGURACIÓN DE LA PÁGINA ---
 st.set_page_config(
     page_title="Generador LISP de Predios",
-    page_icon="📐",
+    page_icon="🏗️",
     layout="centered"
 )
 
