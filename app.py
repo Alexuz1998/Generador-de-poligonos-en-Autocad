@@ -275,7 +275,7 @@ hr {
     object-fit: contain;
     align-self: center;
     margin-left: 8px;
-    margin-right: -8px;
+    margin-right: -3px;
 }
 
 .atlas-title-text {
