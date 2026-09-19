@@ -183,51 +183,51 @@ div[data-testid="stMarkdownContainer"] strong {
 
 /* 1) Generar Archivo LISP — neón dorado */
 .stButton > button {
-    background: linear-gradient(180deg, #2a2413 0%, #17170f 100%) !important;
-    color: #ffe38a !important;
-    border: 2px solid #ffd44d !important;
+    background: linear-gradient(180deg, #2a1c12 0%, #17110d 100%) !important;
+    color: #ffd0a3 !important;
+    border: 2px solid #ff9a3d !important;
     border-radius: 10px !important;
     font-weight: 600 !important;
     font-family: 'Inter', sans-serif !important;
     padding: 0.55rem 1.1rem !important;
     box-shadow:
-        0 0 4px rgba(255, 211, 69, 0.55),
-        0 0 10px rgba(255, 194, 45, 0.38),
-        inset 0 0 8px rgba(255, 206, 74, 0.10) !important;
-    text-shadow: 0 0 3px rgba(255, 221, 115, 0.45) !important;
+        0 0 4px rgba(255, 145, 58, 0.50),
+        0 0 10px rgba(255, 126, 36, 0.34),
+        inset 0 0 8px rgba(255, 140, 45, 0.09) !important;
+    text-shadow: 0 0 3px rgba(255, 171, 94, 0.38) !important;
     transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
 /* 2) Barra de éxito — neón azul */
 .stAlert {
-    background: linear-gradient(180deg, #07152b 0%, #07101f 100%) !important;
-    border: 2px solid #1e8cff !important;
+    background: linear-gradient(180deg, #0d2a1e 0%, #091b14 100%) !important;
+    border: 2px solid #28c982 !important;
     border-radius: 12px !important;
     box-shadow:
-        0 0 4px rgba(35, 145, 255, 0.55),
-        0 0 11px rgba(0, 114, 255, 0.38),
-        inset 0 0 10px rgba(40, 125, 255, 0.10) !important;
+        0 0 4px rgba(40, 201, 130, 0.50),
+        0 0 11px rgba(25, 175, 110, 0.34),
+        inset 0 0 10px rgba(35, 190, 125, 0.09) !important;
 }
 
 .stAlert * {
-    color: #b7dcff !important;
-    text-shadow: 0 0 3px rgba(87, 173, 255, 0.40) !important;
+    color: #b9f3d5 !important;
+    text-shadow: 0 0 3px rgba(80, 210, 145, 0.34) !important;
 }
 
 /* 3) Descargar archivo LISP — neón dorado */
 .stDownloadButton > button {
-    background: linear-gradient(180deg, #2a2413 0%, #17170f 100%) !important;
-    color: #ffe38a !important;
-    border: 2px solid #ffd44d !important;
+    background: linear-gradient(180deg, #2a1c12 0%, #17110d 100%) !important;
+    color: #ffd0a3 !important;
+    border: 2px solid #ff9a3d !important;
     border-radius: 10px !important;
     font-weight: 600 !important;
     font-family: 'Inter', sans-serif !important;
     padding: 0.55rem 1.1rem !important;
     box-shadow:
-        0 0 4px rgba(255, 211, 69, 0.55),
-        0 0 10px rgba(255, 194, 45, 0.38),
-        inset 0 0 8px rgba(255, 206, 74, 0.10) !important;
-    text-shadow: 0 0 3px rgba(255, 221, 115, 0.45) !important;
+        0 0 4px rgba(255, 145, 58, 0.50),
+        0 0 10px rgba(255, 126, 36, 0.34),
+        inset 0 0 8px rgba(255, 140, 45, 0.09) !important;
+    text-shadow: 0 0 3px rgba(255, 171, 94, 0.38) !important;
     transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
@@ -241,9 +241,9 @@ div[data-testid="stMarkdownContainer"] strong {
 .stButton > button:focus,
 .stDownloadButton > button:focus {
     box-shadow:
-        0 0 5px rgba(255, 211, 69, 0.65),
-        0 0 12px rgba(255, 194, 45, 0.42),
-        inset 0 0 9px rgba(255, 206, 74, 0.10) !important;
+        0 0 5px rgba(255, 145, 58, 0.58),
+        0 0 12px rgba(255, 126, 36, 0.36),
+        inset 0 0 9px rgba(255, 140, 45, 0.09) !important;
 }
 
 /* Spinner */
