@@ -292,8 +292,8 @@ hr {
 }
 
 .atlas-footer-gif {
-    width: 150x !important;
-    height: 150px !important;
+    width: 80px !important;
+    height: 80px !important;
     max-width: 80px !important;
     max-height: 80px !important;
     object-fit: contain;
