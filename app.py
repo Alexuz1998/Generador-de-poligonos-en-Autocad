@@ -200,18 +200,18 @@ div[data-testid="stMarkdownContainer"] strong {
 
 /* 2) Barra de éxito — neón azul */
 .stAlert {
-    background: linear-gradient(180deg, #0d2a1e 0%, #091b14 100%) !important;
-    border: 2px solid #28c982 !important;
+    background: linear-gradient(180deg, #0b241a 0%, #081710 100%) !important;
+    border: 2px solid #22b873 !important;
     border-radius: 12px !important;
     box-shadow:
-        0 0 4px rgba(40, 201, 130, 0.50),
-        0 0 11px rgba(25, 175, 110, 0.34),
-        inset 0 0 10px rgba(35, 190, 125, 0.09) !important;
+        0 0 4px rgba(34, 184, 115, 0.34),
+        0 0 10px rgba(25, 160, 98, 0.22),
+        inset 0 0 8px rgba(35, 170, 110, 0.07) !important;
 }
 
 .stAlert * {
-    color: #b9f3d5 !important;
-    text-shadow: 0 0 3px rgba(80, 210, 145, 0.34) !important;
+    color: #a8e8c7 !important;
+    text-shadow: 0 0 2px rgba(70, 190, 130, 0.22) !important;
 }
 
 /* 3) Descargar archivo LISP — neón dorado */
@@ -234,7 +234,7 @@ div[data-testid="stMarkdownContainer"] strong {
 /* Brillo al pasar el cursor: solo en las tres barras */
 .stButton > button:hover,
 .stDownloadButton > button:hover {
-    filter: brightness(1.06);
+    filter: brightness(1.04);
     transform: translateY(-1px);
 }
 
