@@ -168,44 +168,78 @@ div[data-testid="stMarkdownContainer"] strong {
     color: var(--atlas-text) !important;
 }
 
-/* Botones principales */
-.stButton > button,
-.stDownloadButton > button {
-    background: linear-gradient(
-        135deg,
-        var(--atlas-gold),
-        #a97a34
-    ) !important;
+/* ============================================================
+   BARRAS PRINCIPALES — solo estas tres barras cambian de estilo
+   ============================================================ */
 
-    color: #1a1206 !important;
-    border: none !important;
+/* 1) Generar Archivo LISP — neón dorado */
+.stButton > button {
+    background: linear-gradient(180deg, #2a2413 0%, #17170f 100%) !important;
+    color: #ffe38a !important;
+    border: 2px solid #ffd44d !important;
     border-radius: 10px !important;
     font-weight: 600 !important;
     font-family: 'Inter', sans-serif !important;
     padding: 0.55rem 1.1rem !important;
-    transition: filter 0.2s ease, box-shadow 0.2s ease;
+    box-shadow:
+        0 0 6px rgba(255, 211, 69, 0.95),
+        0 0 18px rgba(255, 194, 45, 0.75),
+        inset 0 0 12px rgba(255, 206, 74, 0.16) !important;
+    text-shadow: 0 0 6px rgba(255, 221, 115, 0.85) !important;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
+/* 2) Barra de éxito — neón azul */
+.stAlert {
+    background: linear-gradient(180deg, #07152b 0%, #07101f 100%) !important;
+    border: 2px solid #1e8cff !important;
+    border-radius: 12px !important;
+    box-shadow:
+        0 0 6px rgba(35, 145, 255, 0.95),
+        0 0 20px rgba(0, 114, 255, 0.70),
+        inset 0 0 16px rgba(40, 125, 255, 0.16) !important;
+}
+
+.stAlert * {
+    color: #b7dcff !important;
+    text-shadow: 0 0 6px rgba(87, 173, 255, 0.75) !important;
+}
+
+/* 3) Descargar archivo LISP — neón dorado */
+.stDownloadButton > button {
+    background: linear-gradient(180deg, #2a2413 0%, #17170f 100%) !important;
+    color: #ffe38a !important;
+    border: 2px solid #ffd44d !important;
+    border-radius: 10px !important;
+    font-weight: 600 !important;
+    font-family: 'Inter', sans-serif !important;
+    padding: 0.55rem 1.1rem !important;
+    box-shadow:
+        0 0 6px rgba(255, 211, 69, 0.95),
+        0 0 18px rgba(255, 194, 45, 0.75),
+        inset 0 0 12px rgba(255, 206, 74, 0.16) !important;
+    text-shadow: 0 0 6px rgba(255, 221, 115, 0.85) !important;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+/* Brillo al pasar el cursor: solo en las tres barras */
 .stButton > button:hover,
 .stDownloadButton > button:hover {
-    filter: brightness(1.08);
-    box-shadow: 0 0 16px rgba(211,161,90,0.35);
+    filter: brightness(1.13);
+    transform: translateY(-1px);
+}
+
+.stButton > button:focus,
+.stDownloadButton > button:focus {
+    box-shadow:
+        0 0 8px rgba(255, 211, 69, 1),
+        0 0 24px rgba(255, 194, 45, 0.90),
+        inset 0 0 14px rgba(255, 206, 74, 0.18) !important;
 }
 
 /* Spinner */
 [data-testid="stSpinner"] * {
     color: var(--atlas-text-dim) !important;
-}
-
-/* Alertas */
-.stAlert {
-    background: var(--atlas-card-bg) !important;
-    border: 1px solid var(--atlas-card-border) !important;
-    border-radius: 12px !important;
-}
-
-.stAlert * {
-    color: var(--atlas-text) !important;
 }
 
 /* Divisor */
