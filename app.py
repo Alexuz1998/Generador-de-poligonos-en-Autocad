@@ -198,20 +198,20 @@ div[data-testid="stMarkdownContainer"] strong {
     transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
-/* 2) Barra de éxito — verde más oscuro y suave */
+/* 2) Barra de éxito — neón azul */
 .stAlert {
-    background: linear-gradient(180deg, #06150f 0%, #04100b 100%) !important;
-    border: 2px solid #168653 !important;
+    background: linear-gradient(180deg, #0b241a 0%, #081710 100%) !important;
+    border: 2px solid #22b873 !important;
     border-radius: 12px !important;
     box-shadow:
-        0 0 3px rgba(22, 134, 83, 0.26),
-        0 0 7px rgba(18, 118, 72, 0.15),
-        inset 0 0 6px rgba(22, 134, 83, 0.05) !important;
+        0 0 4px rgba(34, 184, 115, 0.34),
+        0 0 10px rgba(25, 160, 98, 0.22),
+        inset 0 0 8px rgba(35, 170, 110, 0.07) !important;
 }
 
 .stAlert * {
-    color: #92d3b2 !important;
-    text-shadow: 0 0 1px rgba(70, 160, 110, 0.14) !important;
+    color: #a8e8c7 !important;
+    text-shadow: 0 0 2px rgba(70, 190, 130, 0.22) !important;
 }
 
 /* 3) Descargar archivo LISP — neón dorado */
